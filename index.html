@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BhaiSMM — Demo SMM Panel</title>
+<style>
+:root{--purple:#32136d;--violet:#823df0;--pink:#df3f9d;--green:#11b96b;--ink:#17151c;--muted:#6e6878;--bg:#f8f6ff}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:var(--purple);color:white;padding:18px 4%;display:flex;align-items:center;justify-content:space-between;gap:14px;position:sticky;top:0;z-index:5}
+.brand{font-weight:800;font-size:clamp(22px,3vw,32px);color:#bca1ff}.pill{background:var(--green);color:white;border:0;border-radius:40px;padding:13px 22px;font-weight:700;font-size:16px;cursor:pointer}
+main{max-width:1100px;margin:auto;padding:28px 18px 100px}.reviews{border:2px solid #e1d3f5;border-radius:30px;padding:28px;background:#f5f0ff;text-align:center;margin:8px 0 24px}
+.reviews h1{font-size:clamp(21px,3vw,30px);margin:0 0 22px}.review{max-width:760px;margin:auto;background:white;border:1px solid #eee0fa;border-radius:24px;padding:22px;display:flex;align-items:center;gap:20px;text-align:left;box-shadow:0 10px 25px #4b26700c}
+.avatar{width:68px;height:68px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;background:#eee2ff;font-size:32px;border:3px solid #a56df0}.stars{color:#f4cf22;font-size:25px;letter-spacing:3px}.review p{line-height:1.5;margin:6px 0;color:#4f4a56}.review strong{color:#8853d7}
+.online{margin:24px auto 30px;border:3px solid #a9e6c6;background:#fff;border-radius:40px;padding:15px;text-align:center;max-width:410px;font-weight:800;font-size:19px}.online span{color:#16a45f}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;background:#f3efff;border-radius:28px;padding:20px}
+.service{background:white;border:3px solid transparent;border-radius:34px;padding:28px 18px;text-align:center;border-image:linear-gradient(140deg,#8b3de7,#e94c9b) 1;border-radius:34px;min-width:0}
+.emoji{width:105px;height:105px;border-radius:28px;background:linear-gradient(145deg,#f3e6ff,#fbdff0);display:grid;place-items:center;margin:0 auto 18px;font-size:48px}
+.service h2{font-size:clamp(18px,2.5vw,25px);margin:0 0 20px}.gradient-btn{width:100%;max-width:280px;border:0;border-radius:40px;background:linear-gradient(100deg,#8041f0,#dc36a7);color:white;padding:15px 16px;font-weight:800;font-size:16px;box-shadow:0 8px 18px #9a4ce755;cursor:pointer}
+.gradient-btn span{float:right;background:#ffef00;color:#222;border-radius:50%;width:24px;height:24px;display:grid;place-items:center}
+section#order{margin-top:28px;padding:24px;background:white;border:1px solid #eadff9;border-radius:22px;scroll-margin-top:90px}#order h2{margin-top:0}label{display:block;font-weight:700;margin:14px 0 7px}input,select{width:100%;padding:13px;border:1px solid #d7cce8;border-radius:12px;font-size:16px;background:white}button:focus,input:focus,select:focus{outline:3px solid #d8c3ff}.note{color:var(--muted);font-size:14px;line-height:1.5}.submit{margin-top:18px;width:100%;background:var(--green);color:white;border:0;padding:15px;border-radius:14px;font-weight:800;font-size:17px;cursor:pointer}.bottom{position:fixed;bottom:0;left:0;right:0;background:white;box-shadow:0 -5px 22px #3a1b6410;padding:12px max(16px,calc((100% - 1050px)/2));display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:4}.bottom a{color:#7442c8;text-decoration:none;font-weight:700}.bottom .pill{font-size:17px;min-width:190px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:20px}
+@media(max-width:600px){header{padding:16px}.pill{padding:11px 15px}.reviews{padding:20px 12px}.review{padding:15px;gap:12px}.avatar{width:54px;height:54px;font-size:25px}.grid{gap:12px;padding:12px}.service{padding:22px 10px;border-width:2px}.emoji{width:78px;height:78px;font-size:38px}.service h2{font-size:18px}.gradient-btn{font-size:13px;padding:13px 10px}.bottom .pill{min-width:0;flex:1}.bottom a{font-size:13px}}
+</style>
+</head>
+<body>
+<header><div class="brand">BhaiSMM.com</div><button class="pill" onclick="document.querySelector('#order').scrollIntoView({behavior:'smooth'})">Free Trial</button></header>
+<main>
+  <section class="reviews"><h1>⭐ Customer Reviews &amp; Ratings ⭐</h1><div class="review"><div class="avatar">🙂</div><div><div class="stars">★★★★★</div><p>“Yeh sample review hai. Apni website par sirf asli customer feedback dikhayein.”</p><strong>— Demo Customer</strong></div></div></section>
+  <div class="online"><span>🟢</span> Demo SMM Panel</div>
+  <section class="grid" aria-label="Services">
+    <article class="service"><div class="emoji">👤</div><h2>Instagram Followers</h2><button class="gradient-btn" onclick="chooseService('Instagram Followers')">GET PLAN <span>▶</span></button></article>
+    <article class="service"><div class="emoji">❤️</div><h2>Instagram Likes</h2><button class="gradient-btn" onclick="chooseService('Instagram Likes')">GET PLAN <span>▶</span></button></article>
+    <article class="service"><div class="emoji">👀</div><h2>Instagram Views</h2><button class="gradient-btn" onclick="chooseService('Instagram Views')">GET PLAN <span>▶</span></button></article>
+    <article class="service"><div class="emoji">💬</div><h2>Instagram Comments</h2><button class="gradient-btn" onclick="chooseService('Instagram Comments')">GET PLAN <span>▶</span></button></article>
+  </section>
+  <section id="order"><h2>🛒 New Order — Demo</h2><p class="note">Yeh abhi front-end demo hai. Form bharne se asli Instagram service, payment ya order processing nahi hoti.</p>
+    <form id="orderForm">
+      <label for="service">Service chunein</label><select id="service" required><option value="">-- Select service --</option><option>Instagram Followers</option><option>Instagram Likes</option><option>Instagram Views</option><option>Instagram Comments</option></select>
+      <label for="link">Instagram post/profile link</label><input id="link" type="url" placeholder="https://www.instagram.com/..." required>
+      <label for="quantity">Quantity</label><select id="quantity" required><option value="">-- Quantity chunein --</option><option>100</option><option>250</option><option>500</option><option>1000</option></select>
+      <button class="submit" type="submit">Demo Order Submit</button>
+      <p id="message" class="note" role="status"></p>
+    </form>
+  </section>
+  <footer>Learning demo • Real orders ke liye secure backend, service provider integration aur payment setup zaroori hai.</footer>
+</main>
+<nav class="bottom"><a href="#order">▤<br>My Orders</a><button class="pill" onclick="document.querySelector('#order').scrollIntoView({behavior:'smooth'})">＋ New Order</button><a href="#help" onclick="alert('Demo help: yahan apna support contact add karein.')">●<br>Help</a></nav>
+<script>
+function chooseService(name){document.getElementById('service').value=name;document.getElementById('order').scrollIntoView({behavior:'smooth'});}
+document.getElementById('orderForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('message').textContent='Demo only: form test ho gaya. Abhi koi real order ya payment create nahi hui.';});
+</script>
+</body>
+</html>
